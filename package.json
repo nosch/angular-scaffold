@@ -1,0 +1,16 @@
+{
+    "name": "angular-scaffold",
+    "version": "0.1.0",
+    "author": "Norbert Schmidt (nosch)",
+    "description": "A gulp-driven AngularJS application scaffold.",
+    "engines": {
+        "node": ">= v0.10.28"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "gulp": ">=3.6.2"
+    },
+    "scripts": {
+        "postinstall": "node_modules/.bin/bower install"
+    }
+}
