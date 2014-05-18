@@ -1,5 +1,7 @@
-bower_components
 node_modules
+
+src/vendor
 src/component/templates/
+
 .idea
 *.log
