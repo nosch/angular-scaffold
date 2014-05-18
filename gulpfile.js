@@ -2,10 +2,24 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var html2js = require('gulp-html2js');
 
+// Project paths
+var scaffold = {
+    sourceDir: './src/',
+    testDir: './test/',
+    bowerDir: './bower_components/',
+    buildDir: './build/',
+    tmpDir: './build/.tmp/',
+    assetDir: './build/.tmp/asset/',
+    concatDir: './build/.tmp/concat/',
+    htmlDir: './build/.tmp/html/',
+    distDir: './build/dist/',
+    templateDir: './src/component/templates/'
+};
+
 gulp.task('html2js', function() {
-    gulp.src('./src/view/*.html')
+    gulp.src(scaffold.sourceDir + 'view/*.html')
         .pipe(html2js({
-            base: './src/',
+            base: scaffold.sourceDir,
             outputModuleName: 'application.templates',
             useStrict: true,
             quoteChar: '\'',
@@ -22,5 +36,5 @@ gulp.task('html2js', function() {
             }
         }))
         .pipe(concat('templates.js'))
-        .pipe(gulp.dest('./src/component/templates/'));
+        .pipe(gulp.dest(scaffold.templateDir));
 });
