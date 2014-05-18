@@ -8,7 +8,9 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "gulp": ">=3.6.2"
+        "gulp": ">=3.6.2",
+        "gulp-concat": "2.2.0",
+        "gulp-html2js": "0.1.0"
     },
     "scripts": {
         "postinstall": "node_modules/.bin/bower install"

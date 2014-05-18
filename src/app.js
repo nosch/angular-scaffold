@@ -3,6 +3,7 @@
  * @module application
  */
 angular.module('application', [
+        'application.templates',
         'application.controller',
         'ui.router'
     ])
