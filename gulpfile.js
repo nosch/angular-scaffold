@@ -45,7 +45,8 @@ gulp.task('connect', function() {
     connect.server({
         root: scaffold.sourceDir,
         host: 'localhost',
-        port: 8080
+        port: 8080,
+        livereload: true
     });
 
     var options = {
@@ -55,3 +56,14 @@ gulp.task('connect', function() {
     gulp.src(scaffold.sourceDir + 'index.html')
         .pipe(open('', options));
 });
+
+gulp.task('reload', function () {
+    gulp.src(scaffold.sourceDir + 'index.html')
+        .pipe(connect.reload());
+});
+
+gulp.task('watch', function () {
+    gulp.watch([scaffold.sourceDir + '**/*.*'], ['html2js', 'reload']);
+});
+
+gulp.task('default', ['connect', 'watch']);
