@@ -10,8 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="shortcut icon" type="image/png" href="image/favicon.ico">
 
+        <!-- build:css css/style.min.css -->
         <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/app.css">
+        <!-- endbuild -->
 
         <title>Angular Scaffold!</title>
     </head>
@@ -30,15 +32,18 @@
         <div ui-view class="container"></div>
         <div ng-include="'view/footer.tpl.html'"></div>
 
+        <!-- build:js js/vendor.min.js -->
         <script src="vendor/modernizr/modernizr.js"></script>
         <script src="vendor/jquery/dist/jquery.js"></script>
         <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
         <script src="vendor/angular/angular.js"></script>
         <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+        <!-- endbuild -->
 
-        <!-- build:js js/app.js -->
+        <!-- build:js js/app.min.js -->
         <script src="app.js"></script>
         <script src="app-controller.js"></script>
         <script src="component/templates/templates.js"></script>
+        <!-- endbuild -->
     </body>
 </html>
