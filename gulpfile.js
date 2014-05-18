@@ -1,8 +1,10 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var html2js = require('gulp-html2js');
+var connect = require('gulp-connect');
+var open = require('gulp-open');
 
-// Project paths
+// scaffold paths
 var scaffold = {
     sourceDir: './src/',
     testDir: './test/',
@@ -37,4 +39,19 @@ gulp.task('html2js', function() {
         }))
         .pipe(concat('templates.js'))
         .pipe(gulp.dest(scaffold.templateDir));
+});
+
+gulp.task('connect', function() {
+    connect.server({
+        root: scaffold.sourceDir,
+        host: 'localhost',
+        port: 8080
+    });
+
+    var options = {
+        url: "http://localhost:8080"
+    };
+
+    gulp.src(scaffold.sourceDir + 'index.html')
+        .pipe(open('', options));
 });
